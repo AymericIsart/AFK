@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,12 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text deathMsg;
 
+    [SerializeField]
+    private Text money;
+
+    [SerializeField]
+    private Text days;
+
     public void startGameUi()
     {
         startUI.SetActive(false);
@@ -31,5 +38,11 @@ public class UIManager : MonoBehaviour
         gameUI.SetActive(false);
 
         deathMsg.text = dthMsg;
+    }
+
+    public void updateValues(int d, float m)
+    {
+        money.text = m.ToString() + "$";
+        days.text = d.ToString() + " days";
     }
 }

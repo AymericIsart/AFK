@@ -30,7 +30,12 @@ public class playerManager : MonoBehaviour
     [SerializeField]
     private float moneyGainPerDay;
 
+    [Header("day time")]
+    [SerializeField]
+    private float timeBetweenDays;
+
     private float playerMoney;
+    private int days;
 
     private bool isDead = true;
 
@@ -80,6 +85,8 @@ public class playerManager : MonoBehaviour
             Debug.Log("not enough money");
             return;
         }
+        playerMoney -= s.price;
+        gameManager.instance.uiManager.updateValues(days, playerMoney);
         for (int i = 0; i < 3; i++)
         {
             sliders[i].fillAmount += (s.amounts[i] / 100);
@@ -103,15 +110,26 @@ public class playerManager : MonoBehaviour
     {
         isDead = false;
         playerMoney = startMoney;
+        days = 1;
+        gameManager.instance.uiManager.updateValues(days, playerMoney);
+        InvokeRepeating("dayHasPassed", timeBetweenDays, timeBetweenDays);
         for (int i = 0; i < 3; i++)
         {
             sliders[i].fillAmount = 0.5f;
         }
     }
 
+    private void dayHasPassed()
+    {
+        playerMoney += moneyGainPerDay;
+        days++;
+        gameManager.instance.uiManager.updateValues(days, playerMoney);
+    }
+
     private void playerDied(string msg)
     {
         isDead = true;
+        CancelInvoke("dayHasPassed");
         gameManager.instance.uiManager.gameOverUi(msg);
         gameManager.instance.cameraManager.resetCam();
     }
