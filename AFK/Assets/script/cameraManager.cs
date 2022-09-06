@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,5 +55,17 @@ public class cameraManager : MonoBehaviour
         {
             btLeft.SetActive(true);
         }
+    }
+
+    public void resetCam()
+    {
+        currentCam = 1;
+
+        btRight.SetActive(true);
+        btLeft.SetActive(true);
+
+        cameras[0].SetActive(false);
+        cameras[2].SetActive(false);
+        cameras[1].SetActive(true);
     }
 }
