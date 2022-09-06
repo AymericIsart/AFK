@@ -8,4 +8,5 @@ public class items
 {
     public string name;
     public float[] amounts;
+    public float price;
 }

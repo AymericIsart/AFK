@@ -15,6 +15,9 @@ public class gameManager : MonoBehaviour
     [HideInInspector]
     public cameraManager cameraManager;
 
+    [HideInInspector]
+    public UIManager uiManager;
+
     private void Awake()
     {
         if (instance != null)
@@ -33,11 +36,13 @@ public class gameManager : MonoBehaviour
         soundManager = GetComponent<soundManager>();
         playerManager = GetComponent<playerManager>();
         cameraManager = GetComponent<cameraManager>();
+        uiManager = GetComponent<UIManager>();
     }
 
     public void resetGame()
     {
         cameraManager.resetCam();
         playerManager.resetPlayer();
+        uiManager.startGameUi();
     }
 }

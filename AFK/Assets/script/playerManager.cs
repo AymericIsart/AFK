@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class playerManager : MonoBehaviour
 {
+    [Header("slider")]
     [SerializeField]
     private float[] amounts;
 
@@ -15,13 +16,23 @@ public class playerManager : MonoBehaviour
     [SerializeField]
     private float minAmount, maxAmount;
 
+    [Header("death msg")]
     [SerializeField]
     private string[] msgMinAmount;
 
     [SerializeField]
     private string[] msgMaxAmount;
 
-    private bool isDead = false;
+    [Header("money")]
+    [SerializeField]
+    private float startMoney;
+
+    [SerializeField]
+    private float moneyGainPerDay;
+
+    private float playerMoney;
+
+    private bool isDead = true;
 
     private void OnValidate()
     {
@@ -50,16 +61,6 @@ public class playerManager : MonoBehaviour
         }
     }
 
-    public void resetPlayer()
-    {
-        isDead = false;
-        for (int i = 0; i < 3; i++)
-        {
-            sliders[i].fillAmount = 0.5f;
-        }
-    }
-
-    // Update is called once per frame
     private void Update()
     {
         if (!isDead)
@@ -74,6 +75,11 @@ public class playerManager : MonoBehaviour
 
     public void consumeItem(items s)
     {
+        if (playerMoney < s.price)
+        {
+            Debug.Log("not enough money");
+            return;
+        }
         for (int i = 0; i < 3; i++)
         {
             sliders[i].fillAmount += (s.amounts[i] / 100);
@@ -85,21 +91,28 @@ public class playerManager : MonoBehaviour
     {
         if (sliders[i].fillAmount <= (minAmount / 100))
         {
-            Debug.Log("game over min : " + i);
-            Debug.Log(msgMinAmount[i]);
-            playerDied();
+            playerDied(msgMinAmount[i]);
         }
         else if (sliders[i].fillAmount >= (maxAmount / 100))
         {
-            Debug.Log("game over max : " + i);
-            Debug.Log(msgMaxAmount[i]);
-            playerDied();
+            playerDied(msgMaxAmount[i]);
         }
     }
 
-    private void playerDied()
+    public void resetPlayer()
+    {
+        isDead = false;
+        playerMoney = startMoney;
+        for (int i = 0; i < 3; i++)
+        {
+            sliders[i].fillAmount = 0.5f;
+        }
+    }
+
+    private void playerDied(string msg)
     {
         isDead = true;
+        gameManager.instance.uiManager.gameOverUi(msg);
         gameManager.instance.cameraManager.resetCam();
     }
 }
