@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class playerManager : MonoBehaviour
@@ -76,6 +77,38 @@ public class playerManager : MonoBehaviour
                 sliders[i].fillAmount -= (amounts[i] / 100) * Time.deltaTime;
                 checkGameOver(i);
             }
+
+            //for mouse
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.tag == "interactable")
+                    {
+                        Debug.Log(hit.transform.name);
+                        gameManager.instance.itemManager.consumeItem(hit.transform.name);
+                    }
+                }
+            }
+
+            //for touchScreen
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.tag == "interactable")
+                    {
+                        Debug.Log(hit.transform.name);
+                        gameManager.instance.itemManager.consumeItem(hit.transform.name);
+                    }
+                }
+            }
         }
     }
 
@@ -93,7 +126,7 @@ public class playerManager : MonoBehaviour
             sliders[i].fillAmount += (s.amountsDirect[i] / 100);
             if (s.amountsTime[i].infinite)
             {
-                amounts[i] += s.amountsTime[i].amount;
+                amounts[i] -= s.amountsTime[i].amount;
             }
             else if (s.amountsTime[i].timeInSecond > 0)
             {
@@ -101,13 +134,14 @@ public class playerManager : MonoBehaviour
             }
             checkGameOver(i);
         }
+        s.events.Invoke();
     }
 
     private IEnumerator addAmountOverTime(int t, float amount, int pos)
     {
-        amounts[pos] += amount;
-        yield return new WaitForSeconds(t);
         amounts[pos] -= amount;
+        yield return new WaitForSeconds(t);
+        amounts[pos] += amount;
     }
 
     private void checkGameOver(int i)

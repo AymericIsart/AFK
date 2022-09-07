@@ -752,6 +752,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &424915180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424915181}
+  m_Layer: 0
+  m_Name: worldcanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &424915181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424915180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 824047199}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527834429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1218,7 @@ GameObject:
   - component: {fileID: 824047197}
   - component: {fileID: 824047196}
   m_Layer: 5
-  m_Name: worldCanvas
+  m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1261,17 +1292,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824047195}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.017, y: 0.017, z: 0.017}
+  m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
   m_Children:
   - {fileID: 1914287499}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 424915181}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.5}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &909718084
@@ -1642,7 +1673,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: gateau
+          m_StringArgument: Pizza
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1057622675
@@ -1904,15 +1935,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startAmounts:
-  - 2
-  - 0
-  - 0
+  - 0.33
+  - 0.2
+  - 0.4
   sliders:
   - {fileID: 543938585}
   - {fileID: 67448751}
   - {fileID: 1086526099}
-  minAmount: 5
-  maxAmount: 95
+  minAmount: 1
+  maxAmount: 99
   msgMinAmount:
   - min alim
   - min hyg
@@ -1921,9 +1952,9 @@ MonoBehaviour:
   - max alim
   - max hyg
   - max divert
-  startMoney: 25
-  moneyGainPerDay: 10
-  timeBetweenDays: 4
+  startMoney: 75
+  moneyGainPerDay: 75
+  timeBetweenDays: 60
 --- !u!114 &1166664781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,23 +1968,139 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList:
-  - name: gateau
+  - name: Pizza
     amountsDirect:
-    - 1
-    - 4
-    - 2
+    - 25
+    - -10
+    - 0
     amountsTime:
     - infinite: 0
-      timeInSecond: 5
-      amount: -5
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: "Element permettant d'augment\xE9 la nutrition, diminue l'hygi\xE8ne"
+    events:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1767168084}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: Plat deluxe
+    amountsDirect:
+    - 30
+    - 0
+    - 30
+    amountsTime:
     - infinite: 0
       timeInSecond: 0
       amount: 0
     - infinite: 0
       timeInSecond: 0
       amount: 0
-    price: 4
-    description: petit gateau miam miam
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 'Commande un plat de chef, augmente grandement la nutrition et augmente
+      le divertissement '
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Activer robot nettoyeur
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 1
+      timeInSecond: 0
+      amount: 0.3
+    - infinite: 1
+      timeInSecond: 0
+      amount: -0.2
+    price: 0
+    description: Permet de netoyer le sol
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Desactiver robot nettoyeur
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 1
+      timeInSecond: 0
+      amount: -0.3
+    - infinite: 1
+      timeInSecond: 0
+      amount: 0.2
+    price: 0
+    description: Permet de netoyer le sol
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Regarder la tv
+    amountsDirect:
+    - 0
+    - 0
+    - 15
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 1
+      timeInSecond: 0
+      amount: -0.25
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: Une petit heure de tele-Achat pour consommer un peu plus
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Medicament
+    amountsDirect:
+    - -15
+    - 0
+    - 15
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: "Contre certaines maladie, des truc magique quoi\u2026"
+    events:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &1166664782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,6 +2132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+  itemManager: {fileID: 0}
   playerManager: {fileID: 0}
   cameraManager: {fileID: 0}
   uiManager: {fileID: 0}
@@ -2712,8 +2860,8 @@ GameObject:
   - component: {fileID: 1767168086}
   - component: {fileID: 1767168085}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Pizza
+  m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2944,11 +3092,11 @@ RectTransform:
   m_Father: {fileID: 824047199}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 170}
-  m_SizeDelta: {x: 0, y: 100}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914287500
 MonoBehaviour:
   m_ObjectHideFlags: 0

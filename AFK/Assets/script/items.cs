@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class items
@@ -11,6 +12,7 @@ public class items
     public itemsInTime[] amountsTime;
     public float price = 0;
     public string description;
+    public UnityEvent events;
 }
 
 [System.Serializable]

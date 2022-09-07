@@ -10,6 +10,9 @@ public class gameManager : MonoBehaviour
     public soundManager soundManager;
 
     [HideInInspector]
+    public itemManager itemManager;
+
+    [HideInInspector]
     public playerManager playerManager;
 
     [HideInInspector]
@@ -37,6 +40,7 @@ public class gameManager : MonoBehaviour
         playerManager = GetComponent<playerManager>();
         cameraManager = GetComponent<cameraManager>();
         uiManager = GetComponent<UIManager>();
+        itemManager = GetComponent<itemManager>();
     }
 
     public void resetGame()
