@@ -32,4 +32,8 @@ public class itemActivable : MonoBehaviour
     {
         Debug.Log("parent reset " + thisItem.name);
     }
+
+    public virtual void resetAfterDayPass()
+    {
+    }
 }

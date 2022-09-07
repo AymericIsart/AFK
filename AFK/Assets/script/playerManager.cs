@@ -149,6 +149,9 @@ public class playerManager : MonoBehaviour
         playerMoney += moneyGainPerDay;
         days++;
         gameManager.instance.uiManager.updateValues(days, playerMoney);
+
+        //special fish case
+        gameManager.instance.itemManager.resetDay();
     }
 
     private void playerDied(string msg)

@@ -57,4 +57,12 @@ public class itemManager : MonoBehaviour
             s.resetItem();
         }
     }
+
+    public void resetDay()
+    {
+        foreach (itemActivable s in itemsScripts)
+        {
+            s.resetAfterDayPass();
+        }
+    }
 }
