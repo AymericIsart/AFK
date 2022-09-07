@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     private GameObject gameUI;
 
     [SerializeField]
+    private GameObject worldCanvas;
+
+    [SerializeField]
     private GameObject startUI;
 
     [SerializeField]
@@ -29,6 +32,7 @@ public class UIManager : MonoBehaviour
         startUI.SetActive(false);
         deathUI.SetActive(false);
         gameUI.SetActive(true);
+        worldCanvas.SetActive(true);
     }
 
     public void gameOverUi(string dthMsg)
@@ -36,6 +40,7 @@ public class UIManager : MonoBehaviour
         startUI.SetActive(false);
         deathUI.SetActive(true);
         gameUI.SetActive(false);
+        worldCanvas.SetActive(false);
 
         deathMsg.text = dthMsg;
     }
