@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class itemManager : MonoBehaviour
 {
-    public items[] itemList;
+    public item[] itemList;
 
     private void OnValidate()
     {
-        foreach (items s in itemList)
+        foreach (item s in itemList)
         {
             if (s.amountsDirect.Length != 3)
             {
@@ -24,9 +24,44 @@ public class itemManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        //for mouse
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.tag == "interactable")
+                {
+                    Debug.Log(hit.transform.name);
+                    consumeItem(hit.transform.name);
+                }
+            }
+        }
+
+        //for touchScreen
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.tag == "interactable")
+                {
+                    Debug.Log(hit.transform.name);
+                    consumeItem(hit.transform.name);
+                }
+            }
+        }
+    }
+
     public void consumeItem(string name)
     {
-        items s = findItem(name);
+        item s = findItem(name);
         if (s != null)
         {
             gameManager.instance.playerManager.consumeItem(s);
@@ -37,7 +72,7 @@ public class itemManager : MonoBehaviour
         }
     }
 
-    public items findItem(string name)
+    public item findItem(string name)
     {
         return Array.Find(itemList, item => item.name == name);
     }

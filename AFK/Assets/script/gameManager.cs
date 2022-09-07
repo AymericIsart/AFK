@@ -21,6 +21,11 @@ public class gameManager : MonoBehaviour
     [HideInInspector]
     public UIManager uiManager;
 
+    public enum state
+    { START, INGAME, DEAD };
+
+    public state gamestate = state.START;
+
     private void Awake()
     {
         if (instance != null)
@@ -48,5 +53,6 @@ public class gameManager : MonoBehaviour
         cameraManager.resetCam();
         playerManager.resetPlayer();
         uiManager.startGameUi();
+        gamestate = state.INGAME;
     }
 }

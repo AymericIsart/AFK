@@ -1909,7 +1909,7 @@ MonoBehaviour:
     - infinite: 0
       timeInSecond: 0
       amount: 0
-    price: 0
+    price: 5
     description: "Element permettant d'augment\xE9 la nutrition, diminue l'hygi\xE8ne"
     events:
       m_PersistentCalls:

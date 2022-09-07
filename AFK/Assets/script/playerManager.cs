@@ -39,8 +39,6 @@ public class playerManager : MonoBehaviour
     private int days;
     private float[] amounts = new float[3];
 
-    private bool isDead = true;
-
     private void OnValidate()
     {
         if (startAmounts.Length != 3)
@@ -70,49 +68,17 @@ public class playerManager : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead)
+        if (gameManager.instance.gamestate == gameManager.state.INGAME)
         {
             for (int i = 0; i < 3; i++)
             {
                 sliders[i].fillAmount -= (amounts[i] / 100) * Time.deltaTime;
                 checkGameOver(i);
             }
-
-            //for mouse
-            if (Input.GetMouseButtonDown(0))
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if (hit.transform.tag == "interactable")
-                    {
-                        Debug.Log(hit.transform.name);
-                        gameManager.instance.itemManager.consumeItem(hit.transform.name);
-                    }
-                }
-            }
-
-            //for touchScreen
-            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if (hit.transform.tag == "interactable")
-                    {
-                        Debug.Log(hit.transform.name);
-                        gameManager.instance.itemManager.consumeItem(hit.transform.name);
-                    }
-                }
-            }
         }
     }
 
-    public void consumeItem(items s)
+    public void consumeItem(item s)
     {
         if (playerMoney < s.price)
         {
@@ -159,7 +125,6 @@ public class playerManager : MonoBehaviour
     public void resetPlayer()
     {
         StopAllCoroutines();
-        isDead = false;
         playerMoney = startMoney;
         days = 1;
         for (int i = 0; i < 3; i++)
@@ -183,7 +148,7 @@ public class playerManager : MonoBehaviour
 
     private void playerDied(string msg)
     {
-        isDead = true;
+        gameManager.instance.gamestate = gameManager.state.DEAD;
         CancelInvoke("dayHasPassed");
         gameManager.instance.uiManager.gameOverUi(msg);
         gameManager.instance.cameraManager.resetCam();
