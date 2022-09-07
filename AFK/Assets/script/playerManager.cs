@@ -139,6 +139,11 @@ public class playerManager : MonoBehaviour
         }
     }
 
+    public void winMoney(int v)
+    {
+        playerMoney += v;
+    }
+
     private void dayHasPassed()
     {
         playerMoney += moneyGainPerDay;

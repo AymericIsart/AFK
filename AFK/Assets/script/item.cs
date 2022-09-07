@@ -13,6 +13,17 @@ public class item
     public float price = 0;
     public string description;
     public UnityEvent events;
+
+    public item()
+    {
+        amountsDirect = new float[3];
+        amountsTime = new itemInTime[3];
+        for (int i = 0; i < 3; i++)
+        {
+            amountsTime[i] = new itemInTime();
+        }
+        events = new UnityEvent();
+    }
 }
 
 [System.Serializable]
