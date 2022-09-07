@@ -292,6 +292,138 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &123548055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123548056}
+  - component: {fileID: 123548060}
+  - component: {fileID: 123548059}
+  - component: {fileID: 123548058}
+  - component: {fileID: 123548057}
+  m_Layer: 0
+  m_Name: ticketAgratter
+  m_TagString: interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &123548056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123548055}
+  m_LocalRotation: {x: -0.20807937, y: -0.35407615, z: -0.081126764, w: 0.9081583}
+  m_LocalPosition: {x: -2.99, y: 0.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 333051082}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -25.81, y: -42.6, z: 0}
+--- !u!114 &123548057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123548055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554c4a6cfaab7f140a730a03c205fa27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem:
+    name: ticket
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 2
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  chanceToWin2: 20
+  chanceToWin10: 10
+  chanceToWin100: 5
+--- !u!65 &123548058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123548055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &123548059
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123548055}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &123548060
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123548055}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &143395014
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +713,8 @@ Transform:
   m_Children:
   - {fileID: 1187616538}
   - {fileID: 1767168088}
+  - {fileID: 1043097557}
+  - {fileID: 123548056}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1639,6 +1773,156 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1043097556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043097557}
+  - component: {fileID: 1043097561}
+  - component: {fileID: 1043097560}
+  - component: {fileID: 1043097559}
+  - component: {fileID: 1043097558}
+  m_Layer: 0
+  m_Name: RobotWithActivateDeactivate
+  m_TagString: interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043097557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043097556}
+  m_LocalRotation: {x: -0.20807937, y: -0.35407615, z: -0.081126764, w: 0.9081583}
+  m_LocalPosition: {x: -4.35, y: 1.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 333051082}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -25.81, y: -42.6, z: 0}
+--- !u!114 &1043097558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043097556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595fa78ff2d95b049be29fd8d1e2c611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem:
+    name: activate robot
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 1
+      timeInSecond: 0
+      amount: 3
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  itemDeactivate:
+    name: robot deactivate
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 1
+      timeInSecond: 0
+      amount: -3
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!65 &1043097559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043097556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1043097560
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043097556}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1043097561
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043097556}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1059484768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,128 +2177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bbec747a1334c45a5e33b529ffa3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemList:
-  - name: Pizza
-    amountsDirect:
-    - 25
-    - -10
-    - 0
-    amountsTime:
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    price: 5
-    description: "Element permettant d'augment\xE9 la nutrition, diminue l'hygi\xE8ne"
-    events:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: Plat deluxe
-    amountsDirect:
-    - 30
-    - 0
-    - 30
-    amountsTime:
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    price: 0
-    description: 'Commande un plat de chef, augmente grandement la nutrition et augmente
-      le divertissement '
-    events:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: Activer robot nettoyeur
-    amountsDirect:
-    - 0
-    - 0
-    - 0
-    amountsTime:
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 1
-      timeInSecond: 0
-      amount: 0.3
-    - infinite: 1
-      timeInSecond: 0
-      amount: -0.2
-    price: 0
-    description: Permet de netoyer le sol
-    events:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: Desactiver robot nettoyeur
-    amountsDirect:
-    - 0
-    - 0
-    - 0
-    amountsTime:
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 1
-      timeInSecond: 0
-      amount: -0.3
-    - infinite: 1
-      timeInSecond: 0
-      amount: 0.2
-    price: 0
-    description: Permet de netoyer le sol
-    events:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: Regarder la tv
-    amountsDirect:
-    - 0
-    - 0
-    - 15
-    amountsTime:
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 1
-      timeInSecond: 0
-      amount: -0.25
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    price: 0
-    description: Une petit heure de tele-Achat pour consommer un peu plus
-    events:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: Medicament
-    amountsDirect:
-    - -15
-    - 0
-    - 15
-    amountsTime:
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    - infinite: 0
-      timeInSecond: 0
-      amount: 0
-    price: 0
-    description: "Contre certaines maladie, des truc magique quoi\u2026"
-    events:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &1166664782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2050,6 +2212,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   cameraManager: {fileID: 0}
   uiManager: {fileID: 0}
+  gamestate: 0
 --- !u!4 &1187616538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 782b049f1014c2c40902b8698b9db65c, type: 3}
@@ -2821,8 +2984,9 @@ GameObject:
   - component: {fileID: 1767168087}
   - component: {fileID: 1767168086}
   - component: {fileID: 1767168085}
+  - component: {fileID: 1767168089}
   m_Layer: 0
-  m_Name: Pizza
+  m_Name: ItemWithCoolDownTest
   m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,6 +3068,40 @@ Transform:
   m_Father: {fileID: 333051082}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -25.81, y: -42.6, z: 0}
+--- !u!114 &1767168089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767168084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcffcf81975803141816fff59e8a15b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem:
+    name: Pizza
+    amountsDirect:
+    - 5
+    - 5
+    - 5
+    amountsTime:
+    - infinite: 1
+      timeInSecond: 0
+      amount: 20
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 5
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  cooldownTime: 60
 --- !u!1 &1795791262
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ public class gameManager : MonoBehaviour
         cameraManager.resetCam();
         playerManager.resetPlayer();
         uiManager.startGameUi();
+        itemManager.resetItems();
         gamestate = state.INGAME;
     }
 }

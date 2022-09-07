@@ -5,22 +5,15 @@ using UnityEngine;
 
 public class itemManager : MonoBehaviour
 {
-    public item[] itemList;
+    private List<itemActivable> itemsScripts = new List<itemActivable>();
 
-    private void OnValidate()
+    private void Start()
     {
-        foreach (item s in itemList)
+        //fill itemScripts
+        GameObject[] items = GameObject.FindGameObjectsWithTag("interactable");
+        foreach (GameObject g in items)
         {
-            if (s.amountsDirect.Length != 3)
-            {
-                Debug.LogWarning("Don't change the field's array size!");
-                Array.Resize(ref s.amountsDirect, 3);
-            }
-            if (s.amountsTime.Length != 3)
-            {
-                Debug.LogWarning("Don't change the field's array size!");
-                Array.Resize(ref s.amountsTime, 3);
-            }
+            itemsScripts.Add(g.GetComponent<itemActivable>());
         }
     }
 
@@ -36,8 +29,7 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    Debug.Log(hit.transform.name);
-                    consumeItem(hit.transform.name);
+                    hit.transform.GetComponent<itemActivable>().activate();
                 }
             }
         }
@@ -52,28 +44,17 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    Debug.Log(hit.transform.name);
-                    consumeItem(hit.transform.name);
+                    hit.transform.GetComponent<itemActivable>().activate();
                 }
             }
         }
     }
 
-    public void consumeItem(string name)
+    public void resetItems()
     {
-        item s = findItem(name);
-        if (s != null)
+        foreach (itemActivable s in itemsScripts)
         {
-            gameManager.instance.playerManager.consumeItem(s);
+            s.resetItem();
         }
-        else
-        {
-            Debug.LogError("item with name " + name + " does not exist");
-        }
-    }
-
-    public item findItem(string name)
-    {
-        return Array.Find(itemList, item => item.name == name);
     }
 }
