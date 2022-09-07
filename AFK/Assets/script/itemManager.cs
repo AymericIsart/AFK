@@ -13,14 +13,17 @@ public class itemManager : MonoBehaviour
         GameObject[] items = GameObject.FindGameObjectsWithTag("interactable");
         foreach (GameObject g in items)
         {
-            itemsScripts.Add(g.GetComponent<itemActivable>());
+            if (g.GetComponent<itemActivable>())
+            {
+                itemsScripts.Add(g.GetComponent<itemActivable>());
+            }
         }
     }
 
     private void Update()
     {
         //for mouse
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !gameManager.instance.uiManager.isAnyPopUpActif())
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -29,13 +32,20 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    hit.transform.GetComponent<itemActivable>().showPopUp();
+                    if (hit.transform.GetComponent<itemActivable>())
+                    {
+                        hit.transform.GetComponent<itemActivable>().activate();
+                    }
+                    else if (hit.transform.GetComponent<activateOther>())
+                    {
+                        hit.transform.GetComponent<activateOther>().showPopUp();
+                    }
                 }
             }
         }
 
         //for touchScreen
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began && !gameManager.instance.uiManager.isAnyPopUpActif())
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
             RaycastHit hit;
@@ -44,7 +54,11 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    hit.transform.GetComponent<itemActivable>().showPopUp();
+                    hit.transform.GetComponent<itemActivable>().activate();
+                }
+                else if (hit.transform.GetComponent<activateOther>())
+                {
+                    hit.transform.GetComponent<activateOther>().showPopUp();
                 }
             }
         }
