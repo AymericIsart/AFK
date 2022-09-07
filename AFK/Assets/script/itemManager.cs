@@ -11,10 +11,15 @@ public class itemManager : MonoBehaviour
     {
         foreach (items s in itemList)
         {
-            if (s.amounts.Length != 3)
+            if (s.amountsDirect.Length != 3)
             {
                 Debug.LogWarning("Don't change the field's array size!");
-                Array.Resize(ref s.amounts, 3);
+                Array.Resize(ref s.amountsDirect, 3);
+            }
+            if (s.amountsTime.Length != 3)
+            {
+                Debug.LogWarning("Don't change the field's array size!");
+                Array.Resize(ref s.amountsTime, 3);
             }
         }
     }

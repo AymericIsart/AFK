@@ -8,7 +8,7 @@ public class playerManager : MonoBehaviour
 {
     [Header("slider")]
     [SerializeField]
-    private float[] amounts;
+    private float[] startAmounts;
 
     [SerializeField]
     private Image[] sliders;
@@ -36,15 +36,16 @@ public class playerManager : MonoBehaviour
 
     private float playerMoney;
     private int days;
+    private float[] amounts = new float[3];
 
     private bool isDead = true;
 
     private void OnValidate()
     {
-        if (amounts.Length != 3)
+        if (startAmounts.Length != 3)
         {
             Debug.LogWarning("Don't change the field's array size!");
-            Array.Resize(ref amounts, 3);
+            Array.Resize(ref startAmounts, 3);
         }
 
         if (sliders.Length != 3)
@@ -89,9 +90,24 @@ public class playerManager : MonoBehaviour
         gameManager.instance.uiManager.updateValues(days, playerMoney);
         for (int i = 0; i < 3; i++)
         {
-            sliders[i].fillAmount += (s.amounts[i] / 100);
+            sliders[i].fillAmount += (s.amountsDirect[i] / 100);
+            if (s.amountsTime[i].infinite)
+            {
+                amounts[i] += s.amountsTime[i].amount;
+            }
+            else if (s.amountsTime[i].timeInSecond > 0)
+            {
+                StartCoroutine(addAmountOverTime(s.amountsTime[i].timeInSecond, s.amountsTime[i].amount, i));
+            }
             checkGameOver(i);
         }
+    }
+
+    private IEnumerator addAmountOverTime(int t, float amount, int pos)
+    {
+        amounts[pos] += amount;
+        yield return new WaitForSeconds(t);
+        amounts[pos] -= amount;
     }
 
     private void checkGameOver(int i)
@@ -108,9 +124,14 @@ public class playerManager : MonoBehaviour
 
     public void resetPlayer()
     {
+        StopAllCoroutines();
         isDead = false;
         playerMoney = startMoney;
         days = 1;
+        for (int i = 0; i < 3; i++)
+        {
+            amounts[i] = startAmounts[i];
+        }
         gameManager.instance.uiManager.updateValues(days, playerMoney);
         InvokeRepeating("dayHasPassed", timeBetweenDays, timeBetweenDays);
         for (int i = 0; i < 3; i++)
