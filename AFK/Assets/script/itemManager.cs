@@ -29,7 +29,7 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    hit.transform.GetComponent<itemActivable>().activate();
+                    hit.transform.GetComponent<itemActivable>().showPopUp();
                 }
             }
         }
@@ -44,7 +44,7 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    hit.transform.GetComponent<itemActivable>().activate();
+                    hit.transform.GetComponent<itemActivable>().showPopUp();
                 }
             }
         }

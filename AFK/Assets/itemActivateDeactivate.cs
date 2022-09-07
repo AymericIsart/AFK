@@ -6,6 +6,9 @@ using UnityEngine;
 public class itemActivateDeactivate : itemActivable
 {
     [SerializeField]
+    private item itemActivate;
+
+    [SerializeField]
     private item itemDeactivate;
 
     private bool isActivate = false;
@@ -24,18 +27,23 @@ public class itemActivateDeactivate : itemActivable
         }
     }
 
+    private void Start()
+    {
+        thisItem = itemActivate;
+    }
+
     public override void activate()
     {
+        base.activate();
+        isActivate = !isActivate;
         if (isActivate)
         {
-            Debug.Log("parent activate " + itemDeactivate.name);
-            gameManager.instance.playerManager.consumeItem(itemDeactivate);
+            thisItem = itemDeactivate;
         }
         else
         {
-            base.activate();
+            thisItem = itemActivate;
         }
-        isActivate = !isActivate;
     }
 
     public override void resetItem()

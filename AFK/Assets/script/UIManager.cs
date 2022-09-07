@@ -19,6 +19,12 @@ public class UIManager : MonoBehaviour
     private GameObject deathUI;
 
     [SerializeField]
+    private GameObject popUp;
+
+    [SerializeField]
+    private Text popUpText;
+
+    [SerializeField]
     private Text deathMsg;
 
     [SerializeField]
@@ -27,10 +33,13 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text days;
 
+    private itemActivable currItem;
+
     public void startGameUi()
     {
         startUI.SetActive(false);
         deathUI.SetActive(false);
+        popUp.SetActive(false);
         gameUI.SetActive(true);
         worldCanvas.SetActive(true);
     }
@@ -41,8 +50,21 @@ public class UIManager : MonoBehaviour
         deathUI.SetActive(true);
         gameUI.SetActive(false);
         worldCanvas.SetActive(false);
+        popUp.SetActive(false);
 
         deathMsg.text = dthMsg;
+    }
+
+    public void showPopUp(itemActivable itemScript)
+    {
+        currItem = itemScript;
+        popUpText.text = itemScript.thisItem.name;
+        popUp.SetActive(true);
+    }
+
+    public void activateCurrItem()
+    {
+        currItem.activate();
     }
 
     public void updateValues(int d, float m)

@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class itemActivable : MonoBehaviour
 {
-    [SerializeField]
-    private item thisItem;
+    public item thisItem;
 
     private void OnValidate()
     {
@@ -22,6 +21,11 @@ public class itemActivable : MonoBehaviour
         }
     }
 
+    public virtual void showPopUp()
+    {
+        gameManager.instance.uiManager.showPopUp(this);
+    }
+
     public virtual void activate()
     {
         Debug.Log("parent activate " + thisItem.name);
@@ -30,7 +34,6 @@ public class itemActivable : MonoBehaviour
 
     public virtual void resetItem()
     {
-        Debug.Log("parent reset " + thisItem.name);
     }
 
     public virtual void resetAfterDayPass()

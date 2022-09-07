@@ -9,6 +9,18 @@ public class itemWithCooldown : itemActivable
 
     private bool canConsume = true;
 
+    public override void showPopUp()
+    {
+        if (canConsume)
+        {
+            base.showPopUp();
+        }
+        else
+        {
+            Debug.Log("lock");
+        }
+    }
+
     public override void activate()
     {
         if (canConsume)

@@ -10,6 +10,18 @@ public class itemFish : itemActivable
     private bool hasBeenFedToday = false;
     private bool isDead = false;
 
+    public override void showPopUp()
+    {
+        if (!hasBeenFedToday && !isDead)
+        {
+            base.showPopUp();
+        }
+        else
+        {
+            Debug.Log("lock");
+        }
+    }
+
     public override void activate()
     {
         if (!hasBeenFedToday && !isDead)
