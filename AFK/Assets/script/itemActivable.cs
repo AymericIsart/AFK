@@ -21,11 +21,6 @@ public class itemActivable : MonoBehaviour
         }
     }
 
-    public virtual void showPopUp()
-    {
-        gameManager.instance.uiManager.showPopUp(this);
-    }
-
     public virtual void activate()
     {
         Debug.Log("parent activate " + thisItem.name);

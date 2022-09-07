@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemticketToscratch : itemActivable
 {
     [SerializeField]
     private int chanceToWin2, chanceToWin10, chanceToWin100;
+
+    [SerializeField]
+    private Text winText;
+
+    [SerializeField]
+    private Button playButton;
 
     public override void activate()
     {
@@ -15,14 +22,14 @@ public class ItemticketToscratch : itemActivable
 
         //base item if loose
         item t = new item();
-        t.name = "You loose";
+        t.name = "Loose";
         t.amountsDirect[2] = -10;
 
         if (n <= chanceToWin2)
         {
             //win 2
             Debug.Log("win 2$");
-            t.name = "You win 2$ !";
+            t.name = "2$";
             t.amountsDirect[2] = 10;
             gameManager.instance.playerManager.winMoney(2);
         }
@@ -30,7 +37,7 @@ public class ItemticketToscratch : itemActivable
         {
             //win 10
             Debug.Log("win 10$");
-            t.name = "You win 10$ !";
+            t.name = "10$";
             t.amountsDirect[2] = 20;
             gameManager.instance.playerManager.winMoney(10);
         }
@@ -38,7 +45,7 @@ public class ItemticketToscratch : itemActivable
         {
             //win 100
             Debug.Log("win 100$");
-            t.name = "You win 100$ !";
+            t.name = "100$";
             t.amountsDirect[2] = 30;
             gameManager.instance.playerManager.winMoney(100);
         }
@@ -48,6 +55,8 @@ public class ItemticketToscratch : itemActivable
             Debug.Log("loose");
         }
         gameManager.instance.playerManager.consumeItem(t);
+        winText.text = t.name;
+        playButton.enabled = false;
     }
 
     public override void resetItem()

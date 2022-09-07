@@ -19,13 +19,10 @@ public class UIManager : MonoBehaviour
     private GameObject deathUI;
 
     [SerializeField]
-    private GameObject popUp;
-
-    [SerializeField]
-    private Text popUpText;
-
-    [SerializeField]
     private Text deathMsg;
+
+    [SerializeField]
+    private GameObject[] popUps;
 
     [SerializeField]
     private Text money;
@@ -33,15 +30,16 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text days;
 
-    private itemActivable currItem;
-
     public void startGameUi()
     {
         startUI.SetActive(false);
         deathUI.SetActive(false);
-        popUp.SetActive(false);
         gameUI.SetActive(true);
         worldCanvas.SetActive(true);
+        foreach (GameObject g in popUps)
+        {
+            g.SetActive(false);
+        }
     }
 
     public void gameOverUi(string dthMsg)
@@ -50,26 +48,29 @@ public class UIManager : MonoBehaviour
         deathUI.SetActive(true);
         gameUI.SetActive(false);
         worldCanvas.SetActive(false);
-        popUp.SetActive(false);
+        foreach (GameObject g in popUps)
+        {
+            g.SetActive(false);
+        }
 
         deathMsg.text = dthMsg;
-    }
-
-    public void showPopUp(itemActivable itemScript)
-    {
-        currItem = itemScript;
-        popUpText.text = itemScript.thisItem.name;
-        popUp.SetActive(true);
-    }
-
-    public void activateCurrItem()
-    {
-        currItem.activate();
     }
 
     public void updateValues(int d, float m)
     {
         money.text = m.ToString() + "$";
         days.text = d.ToString() + " days";
+    }
+
+    public bool isAnyPopUpActif()
+    {
+        foreach (GameObject g in popUps)
+        {
+            if (g.activeSelf)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

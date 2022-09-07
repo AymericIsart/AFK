@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class activateOther : itemActivable
+public class activateOther : MonoBehaviour
 {
     [SerializeField]
     private GameObject other;
 
-    public override void showPopUp()
+    public void showPopUp()
     {
         other.SetActive(true);
     }
