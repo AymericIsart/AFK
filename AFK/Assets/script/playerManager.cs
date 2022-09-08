@@ -82,7 +82,6 @@ public class playerManager : MonoBehaviour
     {
         if (playerMoney < s.price)
         {
-            Debug.Log("not enough money");
             gameManager.instance.uiManager.eventAnimShow("Not enough Money !");
             return;
         }
