@@ -17,6 +17,17 @@ public class itemFish : itemActivable
             base.activate();
             hasBeenFedToday = true;
         }
+        else
+        {
+            if (hasBeenFedToday)
+            {
+                gameManager.instance.uiManager.eventAnimShow("Blup already fed today");
+            }
+            if (isDead)
+            {
+                gameManager.instance.uiManager.eventAnimShow("Blup is dead");
+            }
+        }
     }
 
     public override void resetAfterDayPass()
