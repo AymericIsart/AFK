@@ -13,6 +13,9 @@ public class itemActivateDeactivate : itemActivable
 
     private bool isActivate = false;
 
+    [SerializeField]
+    private int deactivateAfterCooldown;
+
     private void OnValidate()
     {
         if (itemDeactivate.amountsDirect.Length != 3)
@@ -39,9 +42,14 @@ public class itemActivateDeactivate : itemActivable
         if (isActivate)
         {
             thisItem = itemDeactivate;
+            if (deactivateAfterCooldown > 0)
+            {
+                StartCoroutine(cooldown());
+            }
         }
         else
         {
+            StopAllCoroutines();
             thisItem = itemActivate;
         }
     }
@@ -50,5 +58,12 @@ public class itemActivateDeactivate : itemActivable
     {
         base.resetItem();
         isActivate = false;
+        itemDeactivate.events.Invoke();
+    }
+
+    private IEnumerator cooldown()
+    {
+        yield return new WaitForSeconds(deactivateAfterCooldown);
+        activate();
     }
 }

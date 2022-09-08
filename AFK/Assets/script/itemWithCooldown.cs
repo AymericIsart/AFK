@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class itemWithCooldown : itemActivable
 {
@@ -8,6 +9,9 @@ public class itemWithCooldown : itemActivable
     private int cooldownTime;
 
     private bool canConsume = true;
+
+    [SerializeField]
+    private UnityEvent eventAfterCooldown;
 
     public override void activate()
     {
@@ -20,6 +24,7 @@ public class itemWithCooldown : itemActivable
 
     public override void resetItem()
     {
+        eventAfterCooldown.Invoke();
         base.resetItem();
         StopAllCoroutines();
         canConsume = true;
@@ -30,5 +35,6 @@ public class itemWithCooldown : itemActivable
         canConsume = false;
         yield return new WaitForSeconds(cooldownTime);
         canConsume = true;
+        eventAfterCooldown.Invoke();
     }
 }

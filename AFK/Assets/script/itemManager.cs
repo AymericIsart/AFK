@@ -2,10 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class itemManager : MonoBehaviour
 {
     private List<itemActivable> itemsScripts = new List<itemActivable>();
+
+    private int fingerID = -1;
+
+    private void Awake()
+    {
+#if !UNITY_EDITOR
+     fingerID = 0;
+#endif
+    }
 
     private void Start()
     {
@@ -25,6 +35,11 @@ public class itemManager : MonoBehaviour
         //for mouse
         if (Input.GetMouseButtonDown(0) && !gameManager.instance.uiManager.isAnyPopUpActif())
         {
+            if (EventSystem.current.IsPointerOverGameObject(fingerID))    // is the touch on the GUI
+            {
+                // GUI Action
+                return;
+            }
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
