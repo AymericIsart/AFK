@@ -20,6 +20,10 @@ public class itemWithCooldown : itemActivable
             base.activate();
             StartCoroutine(countdown());
         }
+        else
+        {
+            gameManager.instance.uiManager.eventAnimShow(thisItem.name + " in cooldown");
+        }
     }
 
     public override void resetItem()
