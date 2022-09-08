@@ -3443,6 +3443,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   other: {fileID: 2042961499}
+--- !u!95 &727218451
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727218448}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 862c9afe2abe0be48822267b4b2cfbab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &765505233
 GameObject:
   m_ObjectHideFlags: 0
@@ -20255,6 +20274,18 @@ PrefabInstance:
     - target: {fileID: 6763484870076353770, guid: 801fe6153df0f7e469b3c21c7d91071a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200383846356388209, guid: 801fe6153df0f7e469b3c21c7d91071a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99905664
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200383846356388209, guid: 801fe6153df0f7e469b3c21c7d91071a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.043426964
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200383846356388209, guid: 801fe6153df0f7e469b3c21c7d91071a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 4.978
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 801fe6153df0f7e469b3c21c7d91071a, type: 3}
