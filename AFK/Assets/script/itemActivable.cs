@@ -25,7 +25,6 @@ public class itemActivable : MonoBehaviour
 
     public virtual void activate()
     {
-        Debug.Log("parent activate " + thisItem.name);
         gameManager.instance.playerManager.consumeItem(thisItem);
     }
 
