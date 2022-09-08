@@ -30,8 +30,30 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text days;
 
+    [SerializeField]
+    private Text moneyGO;
+
+    [SerializeField]
+    private Text daysGO;
+
+    [Header("money loss anim")]
+    [SerializeField]
+    private Animator lossAnim;
+
+    [SerializeField]
+    private Text lossText;
+
+    [Header("event anim")]
+    [SerializeField]
+    private Animator eventAnim;
+
+    [SerializeField]
+    private Text eventText;
+
     public void startGameUi()
     {
+        lossText.text = "";
+        lossAnim.Play("moneyLossAnim", 0, 0);
         startUI.SetActive(false);
         deathUI.SetActive(false);
         gameUI.SetActive(true);
@@ -52,14 +74,40 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        moneyGO.text = money.text;
+        daysGO.text = days.text;
 
         deathMsg.text = dthMsg;
     }
 
-    public void updateValues(int d, float m)
+    public void updateValues(int d, float m, float price)
     {
         money.text = m.ToString() + "$";
         days.text = d.ToString() + " days";
+
+        if (price != 0)
+        {
+            if (price > 0)
+            {
+                lossText.color = Color.green;
+            }
+            else
+            {
+                lossText.color = Color.red;
+            }
+            lossText.text = price.ToString() + "$";
+            lossAnim.Play("moneyLossAnim", 0, 0);
+        }
+    }
+
+    public void eventAnimShow(string s)
+    {
+        Debug.Log(s);
+        if (s != "" && s != null)
+        {
+            eventText.text = s;
+            eventAnim.Play("eventAnim", 0, 0);
+        }
     }
 
     public bool isAnyPopUpActif()

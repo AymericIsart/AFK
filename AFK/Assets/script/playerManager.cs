@@ -83,10 +83,12 @@ public class playerManager : MonoBehaviour
         if (playerMoney < s.price)
         {
             Debug.Log("not enough money");
+            gameManager.instance.uiManager.eventAnimShow("Not enough Money !");
             return;
         }
+        gameManager.instance.uiManager.eventAnimShow(s.description);
         playerMoney -= s.price;
-        gameManager.instance.uiManager.updateValues(days, playerMoney);
+        gameManager.instance.uiManager.updateValues(days, playerMoney, -s.price);
         for (int i = 0; i < 3; i++)
         {
             sliders[i].fillAmount += (s.amountsDirect[i] / 100);
@@ -131,7 +133,7 @@ public class playerManager : MonoBehaviour
         {
             amounts[i] = startAmounts[i];
         }
-        gameManager.instance.uiManager.updateValues(days, playerMoney);
+        gameManager.instance.uiManager.updateValues(days, playerMoney, 0);
         InvokeRepeating("dayHasPassed", timeBetweenDays, timeBetweenDays);
         for (int i = 0; i < 3; i++)
         {
@@ -142,13 +144,14 @@ public class playerManager : MonoBehaviour
     public void winMoney(int v)
     {
         playerMoney += v;
+        gameManager.instance.uiManager.updateValues(days, playerMoney, v);
     }
 
     private void dayHasPassed()
     {
         playerMoney += moneyGainPerDay;
         days++;
-        gameManager.instance.uiManager.updateValues(days, playerMoney);
+        gameManager.instance.uiManager.updateValues(days, playerMoney, moneyGainPerDay);
 
         //special fish case
         gameManager.instance.itemManager.resetDay();
