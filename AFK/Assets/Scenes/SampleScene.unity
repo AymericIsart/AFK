@@ -1176,8 +1176,9 @@ Transform:
   m_Children:
   - {fileID: 4568719827085762589}
   - {fileID: 5887848344599990523}
+  - {fileID: 1569721265}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347094636
 GameObject:
@@ -11031,12 +11032,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569721262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.02, y: -1.301, z: 2.42}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 333051082}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650492758
 GameObject:
@@ -11293,6 +11294,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8003516, z: 0.88037694}
   m_Center: {x: 0.0000000010679382, y: 0.026639223, z: -0.05981148}
+--- !u!114 &1703652355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703652353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595fa78ff2d95b049be29fd8d1e2c611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem:
+    name: 
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  itemActivate:
+    name: frigo open
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+  itemDeactivate:
+    name: frigo close
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1720049223
 GameObject:
   m_ObjectHideFlags: 0
@@ -11890,6 +11966,7 @@ Transform:
   - {fileID: 6507482073483198690}
   - {fileID: 4578457583635021840}
   - {fileID: 961809585}
+  - {fileID: 8068632247328648801}
   m_Father: {fileID: 4568719827085762589}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16889,7 +16966,6 @@ Transform:
   - {fileID: 2442011276757036942}
   - {fileID: 7090654818002782931}
   - {fileID: 4636659219785597297}
-  - {fileID: 8068632247328648801}
   m_Father: {fileID: 4568719827085762589}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19359,23 +19435,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4483962638123666870}
+    m_TransformParent: {fileID: 1821965663}
     m_Modifications:
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0657
+      value: -5.4307017
       objectReference: {fileID: 0}
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0574
+      value: 7.8114033
       objectReference: {fileID: 0}
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19387,7 +19463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.58161956
+      value: 0.5816196
       objectReference: {fileID: 0}
     - target: {fileID: 843002008573142999, guid: c710f55279670854a95c13404b151ca7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -19409,8 +19485,63 @@ PrefabInstance:
       propertyPath: m_Name
       value: "T\xE9l\xE9comande"
       objectReference: {fileID: 0}
+    - target: {fileID: 4614801917180831946, guid: c710f55279670854a95c13404b151ca7, type: 3}
+      propertyPath: m_TagString
+      value: interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c710f55279670854a95c13404b151ca7, type: 3}
+--- !u!1 &7227005936130869687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4614801917180831946, guid: c710f55279670854a95c13404b151ca7, type: 3}
+  m_PrefabInstance: {fileID: 7227005936130869686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7227005936130869688
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227005936130869687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.107525185, y: 0.07269168, z: 0.17332868}
+  m_Center: {x: 0.0067189434, y: 0.014616132, z: -0.0000007066682}
+--- !u!114 &7227005936130869689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227005936130869687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb783b90585b34fb2d9662399273ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisItem:
+    name: Tv
+    amountsDirect:
+    - 0
+    - 0
+    - 0
+    amountsTime:
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    - infinite: 0
+      timeInSecond: 0
+      amount: 0
+    price: 0
+    description: 
+    events:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &7243635179464608281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6505663523635588432, guid: 4b3762da7074f7240b1d10ef002fec7d, type: 3}
