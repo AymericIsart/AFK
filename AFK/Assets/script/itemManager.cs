@@ -32,6 +32,7 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
+                    Debug.Log("click " + hit.transform.name);
                     if (hit.transform.GetComponent<itemActivable>())
                     {
                         hit.transform.GetComponent<itemActivable>().activate();
@@ -54,11 +55,15 @@ public class itemManager : MonoBehaviour
             {
                 if (hit.transform.tag == "interactable")
                 {
-                    hit.transform.GetComponent<itemActivable>().activate();
-                }
-                else if (hit.transform.GetComponent<activateOther>())
-                {
-                    hit.transform.GetComponent<activateOther>().showPopUp();
+                    Debug.Log("click " + hit.transform.name);
+                    if (hit.transform.GetComponent<itemActivable>())
+                    {
+                        hit.transform.GetComponent<itemActivable>().activate();
+                    }
+                    else if (hit.transform.GetComponent<activateOther>())
+                    {
+                        hit.transform.GetComponent<activateOther>().showPopUp();
+                    }
                 }
             }
         }
