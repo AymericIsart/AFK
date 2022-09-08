@@ -737,6 +737,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &117774671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1000,6 +1003,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   itemActivate:
     name: robot activate
     amountsDirect:
@@ -1612,6 +1618,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &375240488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,6 +1990,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &479216346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2486,6 +2498,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   chanceToWin2: 20
   chanceToWin10: 10
   chanceToWin100: 5
@@ -4360,6 +4375,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1077682849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5991,6 +6009,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1373734610
 GameObject:
   m_ObjectHideFlags: 0
@@ -11541,6 +11562,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   itemActivate:
     name: frigo open
     amountsDirect:
@@ -12337,6 +12361,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1820427468}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1821965662
 GameObject:
   m_ObjectHideFlags: 0
@@ -12660,6 +12699,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &1883545049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16983,6 +17025,9 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls: []
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   fishDies:
     name: Blup is Dead
     amountsDirect:
@@ -20784,6 +20829,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   cooldownTime: 5
   eventAfterCooldown:
     m_PersistentCalls:

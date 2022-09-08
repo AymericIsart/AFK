@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class itemActivable : MonoBehaviour
 {
     public item thisItem;
+    public UnityEvent resetEvent;
 
     private void OnValidate()
     {
@@ -29,6 +31,7 @@ public class itemActivable : MonoBehaviour
 
     public virtual void resetItem()
     {
+        resetEvent.Invoke();
     }
 
     public virtual void resetAfterDayPass()
