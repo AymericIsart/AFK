@@ -14310,6 +14310,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 4072068708758240933, guid: 4b3762da7074f7240b1d10ef002fec7d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4a8f49c363094248a35f8ab0afb7e65, type: 2}
+    - target: {fileID: 6184599312977177091, guid: 4b3762da7074f7240b1d10ef002fec7d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4a8f49c363094248a35f8ab0afb7e65, type: 2}
     - target: {fileID: 6505663523635588432, guid: 4b3762da7074f7240b1d10ef002fec7d, type: 3}
       propertyPath: m_RootOrder
       value: 1
