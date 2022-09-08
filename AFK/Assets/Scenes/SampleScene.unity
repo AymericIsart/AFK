@@ -4434,7 +4434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
@@ -20288,6 +20288,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4568719827085762589}
     m_Modifications:
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 1523856553053461064, guid: f7f5a2003f6f0c641823b7dc3fc01c50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637470299671483747, guid: f7f5a2003f6f0c641823b7dc3fc01c50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.676
+      objectReference: {fileID: 0}
+    - target: {fileID: 336977654230644535, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 1520897477376083866, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 1701582852273385864, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 1819582994561859570, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 2578435773869173234, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 3823888104461529302, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 5157003157590673158, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 5554872533432344575, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 5587645190145701761, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+    - target: {fileID: 6777768513393283422, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+>>>>>>> Stashed changes
     - target: {fileID: 7185543406608719076, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
       propertyPath: 
       value: 
@@ -20340,6 +20391,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: T_Armchair_1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 1523856553053461064, guid: f7f5a2003f6f0c641823b7dc3fc01c50, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.3194
@@ -20348,6 +20400,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -5.676
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 8772386685450284085, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 734625ea2b5b60b40aa2659c388ff54c, type: 2}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b190d80f8879a04090e2a073e165b98, type: 3}
 --- !u!1001 &1651426064248607478
@@ -21991,6 +22049,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3579412905924821863, guid: 9e49020ff61b8c84c939c0ea204062ee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ca999a669c9894b96df70d4090ac8d, type: 2}
     - target: {fileID: 8094230151197630068, guid: 9e49020ff61b8c84c939c0ea204062ee, type: 3}
       propertyPath: m_Name
       value: T_Tapis1
