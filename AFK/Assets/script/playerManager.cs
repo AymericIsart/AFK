@@ -159,6 +159,8 @@ public class playerManager : MonoBehaviour
     private void playerDied(string msg)
     {
         gameManager.instance.gamestate = gameManager.state.DEAD;
+        gameManager.instance.soundManager.stopSound("main theme");
+        gameManager.instance.soundManager.playSound("menu theme");
         CancelInvoke("dayHasPassed");
         gameManager.instance.uiManager.gameOverUi(msg);
         gameManager.instance.cameraManager.resetCam();

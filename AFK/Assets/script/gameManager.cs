@@ -46,6 +46,8 @@ public class gameManager : MonoBehaviour
         cameraManager = GetComponent<cameraManager>();
         uiManager = GetComponent<UIManager>();
         itemManager = GetComponent<itemManager>();
+
+        soundManager.playSound("menu theme");
     }
 
     public void resetGame()
@@ -55,5 +57,7 @@ public class gameManager : MonoBehaviour
         uiManager.startGameUi();
         itemManager.resetItems();
         gamestate = state.INGAME;
+        soundManager.stopSound("menu theme");
+        soundManager.playSound("main theme");
     }
 }

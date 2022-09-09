@@ -5,25 +5,29 @@ using UnityEngine;
 public class startAnimWithCooldown : MonoBehaviour
 {
     [SerializeField]
-    int countTime;
+    private int countTime;
 
     [SerializeField]
-    Animator anim;
+    private Animator anim;
 
-    bool isActive = false;
-    public void startCountDown()
+    private bool isActive = false;
+
+    public void startCountDown(string soundName)
     {
         if (!isActive)
         {
-            StartCoroutine(countdown());
+            StartCoroutine(countdown(soundName));
         }
     }
 
-    IEnumerator countdown()
+    private IEnumerator countdown(string s)
     {
         isActive = true;
         yield return new WaitForSeconds(countTime);
         anim.Play("DoorAnimation", 0, 0);
+        gameManager.instance.soundManager.playSound("buzzer");
         isActive = false;
+        yield return new WaitForSeconds(1);
+        gameManager.instance.soundManager.playSound(s);
     }
 }

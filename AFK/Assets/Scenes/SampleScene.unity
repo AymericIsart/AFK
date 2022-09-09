@@ -1412,6 +1412,18 @@ MonoBehaviour:
             m_StringArgument: rumbaWorkingAnim
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: bot start
+            m_BoolArgument: 0
+          m_CallState: 2
   itemDeactivate:
     name: robot deactivate
     amountsDirect:
@@ -1443,6 +1455,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: bot stop
             m_BoolArgument: 0
           m_CallState: 2
   deactivateAfterCooldown: 0
@@ -2078,7 +2102,43 @@ MonoBehaviour:
     description: Consumed green pill
     events:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: pills
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: placard close
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 728238785}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: AnimPorteCommodeR
+            m_BoolArgument: 0
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2539,13 +2599,13 @@ MonoBehaviour:
         - m_Target: {fileID: 80038471}
           m_TargetAssemblyTypeName: startAnimWithCooldown, Assembly-CSharp
           m_MethodName: startCountDown
-          m_Mode: 1
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: DoorAnimation
+            m_StringArgument: bouffe deluxe
             m_BoolArgument: 1
           m_CallState: 2
   resetEvent:
@@ -3240,7 +3300,19 @@ MonoBehaviour:
     description: You washed yourself
     events:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: watersplash
+            m_BoolArgument: 0
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3428,16 +3500,16 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: scratch
             m_BoolArgument: 0
           m_CallState: 2
   resetEvent:
@@ -6859,7 +6931,43 @@ MonoBehaviour:
     description: Consumed blue pill
     events:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: pills
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: placard close
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 728238785}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: AnimPorteCommodeR
+            m_BoolArgument: 0
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7524,7 +7632,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: close fridge
+  - name: fridge close
     clip: {fileID: 8300000, guid: 05bf90df0650c4348bae6f48a7387b4a, type: 3}
     volume: 1
     pitch: 1
@@ -7536,13 +7644,13 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: mainTheme
+  - name: main theme
     clip: {fileID: 8300000, guid: 520998c762ba94b43952aa73f4a8fe4c, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: menuTheme
+  - name: menu theme
     clip: {fileID: 8300000, guid: bf3822715b6960f4aac7b0a4379e9c25, type: 3}
     volume: 1
     pitch: 1
@@ -7554,7 +7662,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: open fridge
+  - name: fridge open
     clip: {fileID: 8300000, guid: 3531cf695fd949e448ad6b339e20c8f0, type: 3}
     volume: 1
     pitch: 1
@@ -7572,7 +7680,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: placard
+  - name: placard close
     clip: {fileID: 8300000, guid: fc1e3cbd6aab48749ba7a80989ff4ee8, type: 3}
     volume: 1
     pitch: 1
@@ -8855,13 +8963,13 @@ MonoBehaviour:
         - m_Target: {fileID: 80038471}
           m_TargetAssemblyTypeName: startAnimWithCooldown, Assembly-CSharp
           m_MethodName: startCountDown
-          m_Mode: 1
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: DoorAnimation
+            m_StringArgument: pizzaspeed
             m_BoolArgument: 1
           m_CallState: 2
   resetEvent:
@@ -15376,6 +15484,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: fridge open
+            m_BoolArgument: 1
+          m_CallState: 2
   itemDeactivate:
     name: frigo close
     amountsDirect:
@@ -15419,6 +15539,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: fridge close
             m_BoolArgument: 0
           m_CallState: 2
   deactivateAfterCooldown: 5
@@ -21129,6 +21261,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: eating
+            m_BoolArgument: 0
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls:
@@ -21542,7 +21686,43 @@ MonoBehaviour:
     description: Consumed red pill
     events:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: pills
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: placard close
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 728238785}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: AnimPorteCommodeR
+            m_BoolArgument: 0
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22754,6 +22934,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: AnimPorteCommodeR
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1166664778}
+        m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: placard close
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2042961502
@@ -25323,7 +25515,19 @@ MonoBehaviour:
     description: Blup was fed
     events:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: blup
+            m_BoolArgument: 0
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28181,10 +28385,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1166664778}
+          m_TargetAssemblyTypeName: soundManager, Assembly-CSharp
+          m_MethodName: playSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: tvzap
+            m_BoolArgument: 1
+          m_CallState: 2
   resetEvent:
     m_PersistentCalls:
       m_Calls: []
-  cooldownTime: 5
+  cooldownTime: 9
   eventAfterCooldown:
     m_PersistentCalls:
       m_Calls:
