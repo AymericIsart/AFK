@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class activateOther : MonoBehaviour
 {
     [SerializeField]
-    private GameObject other;
+    private UnityEvent leEvent;
 
     public void showPopUp()
     {
-        other.SetActive(true);
+        leEvent.Invoke();
     }
 }
