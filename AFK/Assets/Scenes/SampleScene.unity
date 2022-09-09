@@ -7493,7 +7493,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a3efb1625602a4b8a9ab5f2568f219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: blup
+    clip: {fileID: 8300000, guid: 72b110ea29d58fd4ebbb0148a7747e96, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bot start
+    clip: {fileID: 8300000, guid: 874a08545ec0c73459282dbe9a2bd9a3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bot stop
+    clip: {fileID: 8300000, guid: 0774f03239b22bf43b2660be7dd4db12, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bouffe deluxe
+    clip: {fileID: 8300000, guid: f45f711ab124b2a49983b25ead3b3fc8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: buzzer
+    clip: {fileID: 8300000, guid: fa4a4f10950b4ff4ca0445d63f9df3a7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: close fridge
+    clip: {fileID: 8300000, guid: 05bf90df0650c4348bae6f48a7387b4a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: eating
+    clip: {fileID: 8300000, guid: 47c0d5ab016e90240877cb2e3989cc23, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: mainTheme
+    clip: {fileID: 8300000, guid: 520998c762ba94b43952aa73f4a8fe4c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: menuTheme
+    clip: {fileID: 8300000, guid: bf3822715b6960f4aac7b0a4379e9c25, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: mouche
+    clip: {fileID: 8300000, guid: ea810defc6b386d4e81cf0c7286a9ed0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: open fridge
+    clip: {fileID: 8300000, guid: 3531cf695fd949e448ad6b339e20c8f0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pills
+    clip: {fileID: 8300000, guid: 62612d760245d98448c161003d12b4c5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pizzaspeed
+    clip: {fileID: 8300000, guid: b5970ed95c634b646976b6c26d61e604, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: placard
+    clip: {fileID: 8300000, guid: fc1e3cbd6aab48749ba7a80989ff4ee8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: scratch
+    clip: {fileID: 8300000, guid: 06b03406dffbe9040bd7ddbe5f93ecdb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tobytousse
+    clip: {fileID: 8300000, guid: 48df2ebcf4f35ef4196297614e69fff2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tvzap
+    clip: {fileID: 8300000, guid: 1efa96a0ae4252a4397e87adb71adffd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: watersplash
+    clip: {fileID: 8300000, guid: b6c243566072ca44b866050f96c02486, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1166664779
 Transform:
   m_ObjectHideFlags: 0
