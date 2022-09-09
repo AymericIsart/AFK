@@ -21007,6 +21007,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: interactable
       objectReference: {fileID: 0}
+    - target: {fileID: 5859913361200804197, guid: 1bfa12f1e54da5f4d9ec6a86a6a8a5f3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df8f34f5ab3171e4d97e30f203b15bce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfa12f1e54da5f4d9ec6a86a6a8a5f3, type: 3}
 --- !u!1001 &2716347749236099715
@@ -23941,6 +23945,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouteille_Cola
       objectReference: {fileID: 0}
+    - target: {fileID: 5462958343151685923, guid: c4a2eb759fc5e154aacaa705f7a2bba7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3446100f6735a4f498619d0b6c56f467, type: 2}
+    - target: {fileID: 5645396596226800674, guid: c4a2eb759fc5e154aacaa705f7a2bba7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3446100f6735a4f498619d0b6c56f467, type: 2}
     - target: {fileID: 8541409683957193636, guid: c4a2eb759fc5e154aacaa705f7a2bba7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -23951,7 +23963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8541409683957193636, guid: c4a2eb759fc5e154aacaa705f7a2bba7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6790118
+      value: -1.407
       objectReference: {fileID: 0}
     - target: {fileID: 8541409683957193636, guid: c4a2eb759fc5e154aacaa705f7a2bba7, type: 3}
       propertyPath: m_LocalPosition.z
