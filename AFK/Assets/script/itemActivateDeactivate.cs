@@ -16,6 +16,10 @@ public class itemActivateDeactivate : itemActivable
     [SerializeField]
     private int deactivateAfterCooldown;
 
+    int countdownReclick = 1;
+    bool canActivate = true;
+    Coroutine closeCountdown;
+
     private void OnValidate()
     {
         if (itemDeactivate.amountsDirect.Length != 3)
@@ -37,25 +41,44 @@ public class itemActivateDeactivate : itemActivable
 
     public override void activate()
     {
-        base.activate();
-        isActivate = !isActivate;
-        if (isActivate)
+        Debug.Log(canActivate);
+        if (canActivate)
         {
-            thisItem = itemDeactivate;
-            if (deactivateAfterCooldown > 0)
+            Debug.Log("here");
+            StartCoroutine(countdownBtClick());
+            base.activate();
+            isActivate = !isActivate;
+            if (isActivate)
             {
-                StartCoroutine(cooldown());
+                thisItem = itemDeactivate;
+                if (deactivateAfterCooldown > 0)
+                {
+                    closeCountdown = StartCoroutine(cooldown());
+                }
+            }
+            else
+            {
+                if(closeCountdown != null)
+                {
+                    StopCoroutine(closeCountdown);
+                }
+                thisItem = itemActivate;
             }
         }
-        else
-        {
-            StopAllCoroutines();
-            thisItem = itemActivate;
-        }
+    }
+
+    IEnumerator countdownBtClick()
+    {
+        canActivate = false;
+        Debug.Log("cor false");
+        yield return new WaitForSeconds(countdownReclick);
+        Debug.Log("cor true");
+        canActivate = true;
     }
 
     public override void resetItem()
     {
+        StopAllCoroutines();
         base.resetItem();
         isActivate = false;
         itemDeactivate.events.Invoke();
