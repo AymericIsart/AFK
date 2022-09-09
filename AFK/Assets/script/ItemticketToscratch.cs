@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ItemticketToscratch : itemActivable
 {
     [SerializeField]
-    private int chanceToWin2, chanceToWin10, chanceToWin100;
+    private float chanceToWin2, chanceToWin10, chanceToWin100;
 
     [SerializeField]
     private Text winText;
@@ -18,7 +18,7 @@ public class ItemticketToscratch : itemActivable
     {
         base.activate();
 
-        int n = Random.Range(1, 100);
+        float n = Random.Range(1, 100);
 
         //base item if loose
         item t = new item();
